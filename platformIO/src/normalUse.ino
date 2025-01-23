@@ -62,18 +62,18 @@ void loop() {
     if(ultrasuoni.Distance()<20){
       Serial.println("pericolo collisione");
       if(servoGrade>135){
+        movimento('I',5);
+        delay(500);
         movimento('D',5);
-        delay(750);
-        movimento('I',5);
-        delay(1000);
+        delay(250);
       }else if(servoGrade<45){
-        movimento('S',5);
-        delay(750);
         movimento('I',5);
-        delay(1000);
+        delay(500);
+        movimento('S',5);
+        delay(250);
       }else{
         movimento('I',5);
-        delay(1000);
+        delay(500);
       }
       movimento('K',0);
       Serial.println("----------risolto");
